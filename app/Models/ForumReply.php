@@ -14,7 +14,10 @@ class ForumReply extends Model
         'user_id',
         'body',
     ];
-
+ protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
     public function post()
     {
         return $this->belongsTo(ForumPost::class, 'forum_post_id');

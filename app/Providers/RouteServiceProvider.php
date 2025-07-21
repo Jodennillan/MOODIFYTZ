@@ -22,11 +22,15 @@ class RouteServiceProvider extends ServiceProvider
 {
     $user = auth()->user();
 
-    if ($user->role === 'therapist') {
-        return '/therapist-panel'; // Replace with your therapist route
+    if ($user->role === 'admin') {
+        return route('admin.dashboard');
     }
 
-    return '/dashboard'; // Regular user
+    if ($user->role === 'therapist') {
+        return route('therapist.panel');
+    }
+
+    return route('dashboard');
 }
 
 

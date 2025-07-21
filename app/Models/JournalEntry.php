@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Assessment extends Model
+class JournalEntry extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'answers',
-        'advice'
+        'user_id', 
+        'title', 
+        'content', 
+        'entry_date', 
+        'privacy'
     ];
-
+    
     protected $casts = [
-        'answers' => 'array',
-        'advice' => 'array'
+        'entry_date' => 'date'
     ];
 }

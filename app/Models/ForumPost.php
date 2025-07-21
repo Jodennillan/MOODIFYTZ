@@ -20,6 +20,8 @@ class ForumPost extends Model
     protected $casts = [
         'tags' => 'array',
         'anonymous' => 'boolean',
+         'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     public function user()
